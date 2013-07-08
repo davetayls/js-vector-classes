@@ -1,0 +1,10 @@
+{
+  "name": "js-vector-classes",
+  "version": "0.0.1",
+  "main": "Vec2.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
