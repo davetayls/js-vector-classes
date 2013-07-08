@@ -1,7 +1,7 @@
 {
   "name": "js-vector-classes",
-  "version": "0.0.2",
-  "main": "Vec2.js",
+  "version": "0.0.3",
+  "main": ["Vec2.js", "Vec3.js"],
   "ignore": [
     "**/.*",
     "node_modules",

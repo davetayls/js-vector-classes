@@ -1,19 +1,19 @@
 /**
- * 2D Vector
+ * 3D Vector
  * @author Dave Taylor <dave.taylor@pogokid.com>
  */
 
 (function(global) {
     'use strict';
 
-    var Vec2 = function( x, y ) {
+    var Vec3 = function( x, y, z ) {
         this.listeners = [];
-        this.set( x, y||x );
+        this.set( x, y||x, z||x );
     };
-    Vec2.scalar = function(s){
-        return { x: s, y: s };
+    Vec3.scalar = function(n){
+        return { x: n, y: n, z: n };
     };
-    Vec2.prototype = {
+    Vec3.prototype = {
         // simple events
         on: function( eventName, fn ) {
             this.listeners[eventName] = this.listeners[eventName] || [];
@@ -30,48 +30,55 @@
         },
 
         // the core place to set the values
-        set      : function( x, y ) {
+        set: function( x, y, z ) {
             this.x = x;
-            this.y = y;
+            this.y = y || x;
+            this.z = z || x;
             this._trigger( 'set' );
             return this;
         },
 
         // the maths
-        plus     : function( v ) {
+        plus: function( v ) {
             return this.set(
                 this.x + v.x,
-                this.y + v.y
+                this.y + v.y,
+                this.z + v.z
             );
         },
-        minus    : function( v ) {
+        minus: function( v ) {
             return this.set(
                 this.x - v.x,
-                this.y - v.y
+                this.y - v.y,
+                this.z - v.z
             );
         },
-        mult : function( v ) {
+        mult: function( v ) {
             return this.set(
                 this.x * v.x,
-                this.y * v.y
+                this.y * v.y,
+                this.z * v.z
             );
         },
-        div : function( v ) {
+        div: function( v ) {
             return this.set(
                 this.x / v.x,
-                this.y / v.y
+                this.y / v.y,
+                this.z / v.z
             );
         },
-        mod      : function( v ) {
+        mod: function( v ) {
             return this.set(
                 this.x % v.x,
-                this.y % v.y
+                this.y % v.y,
+                this.z % v.z
             );
         },
         inv: function(){
             return this.set(
                 this.x*=-1,
-                this.y*=-1
+                this.y*=-1,
+                this.z*=-1
             );
         },
 
@@ -94,30 +101,26 @@
 
 
         // helpers
-        copy: function( v ) {
-            return this.set(v.x, v.y);
+        copy     : function( v ) {
+            return this.set(v.x, v.y, v.z);
         },
-        clone: function() {
-            var v = new Vec2();
+        clone    : function() {
+            var v = new Vec3();
             return v.copy( this );
         },
         equals   : function( v ) {
             return this.x === v.x && this.y === v.y;
-        },
-
-        // other helpers
-        distance : function( v ) {
-            return Math.sqrt( Math.pow( (v.x - this.x), 2 ) + Math.pow( (v.y - this.y), 2 ) );
         }
+
 
     };
 
     if (typeof exports !== 'undefined') {
-        module.exports = Vec2;
+        module.exports = Vec3;
     } else if (global.define && global.define.amd) {
-        define(function(){ return Vec2; });
+        define(function(){ return Vec3; });
     } else {
-        global.Vec2 = Vec2;
+        global.Vec3 = Vec3;
     }
 
 })(this);
