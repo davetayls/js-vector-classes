@@ -29,33 +29,35 @@ each file.
 
 You can start using this vector by creating a new instance:
 
-    var velocity = new Vec2(10, 5),
+    var v        = new Vec2(1, 5),
+        velocity = new Vec2(10, 5),
         location = new Vec2(250, 100)
     ;
 
 You can set the properties again using
 
-    set(x, y)
+    v.set(x, y)
 
 ### Maths
 
 You have the following methods available to you.
 
     // Maths
-    plus(Vec2)
-    minus(Vec2)
-    mult(Vec2) // multiply
-    div(Vec2)  // divide
-    mod(Vec2)  // modulus
+    v.plus(Vec2)
+    v.minus(Vec2)
+    v.mult(Vec2) // multiply
+    v.div(Vec2)  // divide
+    v.mod(Vec2)  // modulus
 
     // helpers
-    inv()      // invert
+    v.inv()      // invert
 
+#### New Instances
 Each of these also have a version which returns a new instance just
 change the first letter to be uppercase.
 
-    Plus(Vec2)
-    Minus(Vec2)
+    v.Plus(Vec2)
+    v.Minus(Vec2)
     // => etc
 
 ### Helpers
