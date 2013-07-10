@@ -8,7 +8,7 @@
 
     var Vec2 = function( x, y ) {
         this.listeners = [];
-        this.set( x, y||x );
+        this.set( x, y );
     };
     Vec2.scalar = function(s){
         return { x: s, y: s };
@@ -32,7 +32,7 @@
         // the core place to set the values
         set      : function( x, y ) {
             this.x = x;
-            this.y = y;
+            this.y = y || x;
             this._trigger( 'set' );
             return this;
         },
