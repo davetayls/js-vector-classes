@@ -74,6 +74,16 @@
                 this.y*=-1
             );
         },
+        normalize: function(){
+            var mag = this.mag();
+            return this.div({
+                x: mag,
+                y: mag
+            });
+        },
+        mag: function(){
+            return Math.sqrt(Math.pow(this.x, 2)+Math.pow(this.y, 2));
+        },
 
         // functions which return a new instance
         Plus: function( v ) {

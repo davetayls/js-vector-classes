@@ -38,31 +38,47 @@
                     assert(v.x).equals(3);
                     assert(v.y).equals(3);
                 })
-                it('plus', function(){
-                    var v = new Vec2(2, 3).plus(new Vec2(3, 6));
-                    assert(v.x).equals(5);
-                    assert(v.y).equals(9);
+
+                describe('Maths', function(){
+                    it('plus', function(){
+                        var v = new Vec2(2, 3).plus(new Vec2(3, 6));
+                        assert(v.x).equals(5);
+                        assert(v.y).equals(9);
+                    });
+                    it('minus', function(){
+                        var v = new Vec2(2, 3).minus(new Vec2(1, 2));
+                        assert(v.x).equals(1);
+                        assert(v.y).equals(1);
+                    });
+                    it('mult', function(){
+                        var v = new Vec2(2, 3).mult(new Vec2(2, 3));
+                        assert(v.x).equals(4);
+                        assert(v.y).equals(9);
+                    });
+                    it('div', function(){
+                        var v = new Vec2(2, 3).div(new Vec2(4, 6));
+                        assert(v.x).equals(0.5);
+                        assert(v.y).equals(0.5);
+                    });
+                    it('mod', function(){
+                        var v = new Vec2(12, 22).mod(new Vec2(5, 5));
+                        assert(v.x).equals(2);
+                        assert(v.y).equals(2);
+                    });
+                    it('mag', function(){
+                        var mag = new Vec2(2, 2).mag();
+                        assert(mag).isSameAs(2.8284271247461903);
+                    });
+                    it('normalize', function(){
+                        var v = new Vec2(4, 5).normalize();
+                        assert(v.mag()).isSameAs(1);
+                        var v = new Vec2(-4, -5).normalize();
+                        assert(v.mag()).isSameAs(1);
+                    });
                 });
-                it('minus', function(){
-                    var v = new Vec2(2, 3).minus(new Vec2(1, 2));
-                    assert(v.x).equals(1);
-                    assert(v.y).equals(1);
-                });
-                it('mult', function(){
-                    var v = new Vec2(2, 3).mult(new Vec2(2, 3));
-                    assert(v.x).equals(4);
-                    assert(v.y).equals(9);
-                });
-                it('div', function(){
-                    var v = new Vec2(2, 3).div(new Vec2(4, 6));
-                    assert(v.x).equals(0.5);
-                    assert(v.y).equals(0.5);
-                });
-                it('mod', function(){
-                    var v = new Vec2(12, 22).mod(new Vec2(5, 5));
-                    assert(v.x).equals(2);
-                    assert(v.y).equals(2);
-                });
+
+
+
                 it('inv', function(){
                     var v = new Vec2(12, 22).inv();
                     assert(v.x).equals(-12);
