@@ -101,6 +101,9 @@
         Inv: function(){
             return this.clone().inverse();
         },
+        Normalize: function(){
+            return this.clone().normalize();
+        },
 
 
         // helpers
