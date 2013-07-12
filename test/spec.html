@@ -10,7 +10,6 @@
         <div id="qunit-fixture"></div>
         <div id="container"></div>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="lib/qunit.js"></script>
         <script src="lib/pavlov.js"></script>
 
@@ -93,6 +92,11 @@
                     var v = new Vec2(2, 2);
                     assert(v.equals(new Vec2(2, 2))).isSameAs(true);
                     assert(v.equals(new Vec2(4))).isSameAs(false);
+                });
+                it('clone', function(){
+                    var v = new Vec2(2, 2);
+                    var v2 = v.clone();
+                    assert(v === v2).isSameAs(false);
                 });
 
             });
