@@ -32,7 +32,7 @@
         // the core place to set the values
         set      : function( x, y ) {
             this.x = x;
-            this.y = y || x;
+            this.y = typeof y === 'undefined' ? x : y;
             this._trigger( 'set' );
             return this;
         },
