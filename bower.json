@@ -1,6 +1,6 @@
 {
   "name": "js-vector-classes",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": ["Vec2.js", "Vec3.js"],
   "ignore": [
     "**/.*",
