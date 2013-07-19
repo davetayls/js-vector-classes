@@ -93,7 +93,10 @@
             return this.clone().minus( v );
         },
         Mult: function( v ) {
-            return this.clone().multiply( v );
+            return this.clone().mult( v );
+        },
+        Div: function(){
+            return this.clone().div(v);
         },
         Mod: function( v ) {
             return this.clone().mod( v );
