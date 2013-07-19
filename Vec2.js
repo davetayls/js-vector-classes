@@ -30,7 +30,7 @@
         },
 
         // the core place to set the values
-        set      : function( x, y ) {
+        set: function( x, y ) {
             this.x = x;
             this.y = typeof y === 'undefined' ? x : y;
             this._trigger( 'set' );
@@ -38,31 +38,31 @@
         },
 
         // the maths
-        plus     : function( v ) {
+        plus: function( v ) {
             return this.set(
                 this.x + v.x,
                 this.y + v.y
             );
         },
-        minus    : function( v ) {
+        minus: function( v ) {
             return this.set(
                 this.x - v.x,
                 this.y - v.y
             );
         },
-        mult : function( v ) {
+        mult: function( v ) {
             return this.set(
                 this.x * v.x,
                 this.y * v.y
             );
         },
-        div : function( v ) {
+        div: function( v ) {
             return this.set(
                 this.x / v.x,
                 this.y / v.y
             );
         },
-        mod      : function( v ) {
+        mod: function( v ) {
             return this.set(
                 this.x % v.x,
                 this.y % v.y
@@ -95,7 +95,7 @@
         Mult: function( v ) {
             return this.clone().mult( v );
         },
-        Div: function(){
+        Div: function(v){
             return this.clone().div(v);
         },
         Mod: function( v ) {

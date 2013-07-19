@@ -58,6 +58,9 @@
                         var v = new Vec2(2, 3).div(new Vec2(4, 6));
                         assert(v.x).equals(0.5);
                         assert(v.y).equals(0.5);
+                        var vv = v.Div(new Vec2(5));
+                        assert(vv.x). equals(0.1);
+                        assert(vv.y). equals(0.1);
                     });
                     it('mod', function(){
                         var v = new Vec2(12, 22).mod(new Vec2(5, 5));
